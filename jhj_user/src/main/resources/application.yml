@@ -4,8 +4,9 @@ server:
 spring:
   application:
     name: jhj-user-service
-  config:
-    import: optional:consul:localhost:8500
+  profiles:
+    active:
+      - local
   cloud:
     consul:
       host: localhost
