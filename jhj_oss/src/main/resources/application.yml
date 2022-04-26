@@ -1,0 +1,108 @@
+server:
+  port: 21102
+  address: 0.0.0.0
+
+#logging:
+#  level:
+#    root:  INFO
+#    org.springframework:  WARN
+#    com.jhj:  DEBUG
+#    com.jhj.oss: DEBUG
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.engine.QueryParameters: DEBUG
+#    org.hibernate.engine.query.HQLQueryPlan: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: trace
+#  file:
+#    path: /var/wq-log/wq-oss
+#    name: /var/wq-log/wq-oss/${spring.application.name}.log
+#  logback:
+#    rollingpolicy:
+#      max-history: 15
+#      max-file-size: 50MB
+
+spring:
+  messages:
+    encoding: UTF-8
+  profiles:
+    active:
+     - local
+  application:
+    name: jhj-oss-service
+  cloud:
+    consul:
+      config:
+        enabled: true #是否启用配置中心功能
+        format: YAML #设置配置值的格式
+        prefix: config #设置配置所在目录
+        data-key: data #配置key的名字，由于Consul是K/V存储，配置存储在对应K的V中
+        watch:
+          # 是否开启自动刷新，默认值 true 开启
+          enabled: true
+          # 刷新频率，单位：毫秒，默认值 1000
+          delay: 10000
+      discovery: # 服务发现配置
+        enabled: true
+        register: true
+        deregister: true
+        prefer-ip-address: true
+        health-check-interval: 10s
+        health-check-critical-timeout: 30s
+        health-check-path: /actuator/health
+        instance-id: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port} # 应用名称+服务器IP+端口+版本
+      enabled: true
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    #初始化数据
+    #    data: classpath:data.sql
+    #    sql-script-encoding: utf-8
+    #    initialization-mode: ALWAYS
+    #druid
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      ## 最小空闲连接数量
+      minimum-idle: 5
+      ## 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 180000
+      ## 连接池最大连接数，默认是10
+      maximum-pool-size: 10
+      ## 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      ## 连接池母子
+      pool-name: MyHikariCP
+      ## 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      ## 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
+  jpa:
+    format-sql: true
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      types:
+        print:
+          banner: false
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    open-in-view: true
+    properties:
+      hibernate:
+        session_factory:
+          statement_inspector: com.jhj.oss.inspect.DeleteInspect
+#feign:
+#  httpclient:
+#    enabled: false
+#  okhttp:
+#    enabled: true
+#  client:
+#    config:
+#      rpc-user: # feign name
+#        requestInterceptors:
+#          - com.jhj.common.Intercptor.FeignInterceptor
+#spring.servlet:
+#  multipart:
+#    max-file-size: 1024MB
+#    max-request-size: 1024MB
