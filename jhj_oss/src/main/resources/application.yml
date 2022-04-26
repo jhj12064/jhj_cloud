@@ -2,23 +2,23 @@ server:
   port: 21102
   address: 0.0.0.0
 
-#logging:
-#  level:
-#    root:  INFO
-#    org.springframework:  WARN
-#    com.jhj:  DEBUG
-#    com.jhj.oss: DEBUG
-#    org.hibernate.SQL: DEBUG
-#    org.hibernate.engine.QueryParameters: DEBUG
-#    org.hibernate.engine.query.HQLQueryPlan: DEBUG
-#    org.hibernate.type.descriptor.sql.BasicBinder: trace
-#  file:
-#    path: /var/wq-log/wq-oss
-#    name: /var/wq-log/wq-oss/${spring.application.name}.log
-#  logback:
-#    rollingpolicy:
-#      max-history: 15
-#      max-file-size: 50MB
+logging:
+  level:
+    root:  INFO
+    org.springframework:  WARN
+    com.jhj:  DEBUG
+    com.jhj.oss: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.engine.QueryParameters: DEBUG
+    org.hibernate.engine.query.HQLQueryPlan: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+  file:
+    path: /var/jhj-log/jhj-oss
+    name: /var/jhj-log/jhj-oss/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-history: 15
+      max-file-size: 50MB
 
 spring:
   messages:
@@ -92,16 +92,16 @@ spring:
       hibernate:
         session_factory:
           statement_inspector: com.jhj.oss.inspect.DeleteInspect
-#feign:
-#  httpclient:
-#    enabled: false
-#  okhttp:
-#    enabled: true
-#  client:
-#    config:
-#      rpc-user: # feign name
-#        requestInterceptors:
-#          - com.jhj.common.Intercptor.FeignInterceptor
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  client:
+    config:
+      rpc-user: # feign name
+        requestInterceptors:
+          - com.jhj.common.Intercptor.FeignInterceptor
 #spring.servlet:
 #  multipart:
 #    max-file-size: 1024MB

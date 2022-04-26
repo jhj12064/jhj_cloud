@@ -16,7 +16,7 @@ public class FileTest extends BaseEntity{
     @ApiModelProperty("原文件名")
     private String originalName;
 
-    @Column(unique = true)
+    //@Column(unique = true)
     @ApiModelProperty("文件url")
     private String url;
 
