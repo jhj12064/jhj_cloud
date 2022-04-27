@@ -10,6 +10,7 @@
     <module>jhj_util</module>
     <module>jhj_oss</module>
     <module>jhj_common</module>
+    <module>jhj_gateway</module>
   </modules>
   <packaging>pom</packaging>
 
