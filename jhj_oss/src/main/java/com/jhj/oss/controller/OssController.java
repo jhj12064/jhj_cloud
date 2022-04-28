@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletResponse;
 
 @Slf4j
-@Api(tags = "文件处理")
+@Api(tags = "test")
 @Controller
 @RequestMapping("/oss/v1")
 public class OssController {

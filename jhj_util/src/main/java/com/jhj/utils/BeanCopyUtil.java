@@ -12,8 +12,6 @@ import java.util.function.Supplier;
 
 /**
  * 深度拷贝
- * @author sea
- * @date 2020/1/13 10:30 AM
  */
 public class BeanCopyUtil  extends BeanUtils {
 

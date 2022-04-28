@@ -6,10 +6,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * @author sea
- * @date 2019/12/25 9:22 AM
- */
 public class RegexUtil {
 
 
