@@ -59,7 +59,8 @@ public class TestAnnotation {
 
     @Test
     public void test3() throws Exception {
-        //Set <Class <?>> classes = ClassScanner.scanPackageByAnnotation("", BatchSynchTable.class);
-
+        //扫描
+        Set <Class <?>> classes = ClassScanner.scanPackageByAnnotation("com.jhj.common.model.test", TestClass.class);
+        System.out.println(classes);
     }
 }
