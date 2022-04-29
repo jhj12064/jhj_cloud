@@ -1,5 +1,5 @@
 server:
-  port: 21102
+  port: 20002
   address: 0.0.0.0
 
 logging:

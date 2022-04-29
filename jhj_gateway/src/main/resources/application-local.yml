@@ -1,14 +1,8 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/wq_oss?useUnicode=true&allowMultiQueries=true&useAffectedRows=true&characterEncoding=utf8&serverTimezone=UTC
-    username: root
-    password: 123456
   config:
     import: optional:consul:localhost:8500
   cloud:
     consul:
       host: localhost
       port: 8500
-exclusion:
-  url:
-    - /**
+

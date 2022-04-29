@@ -6,11 +6,7 @@ import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-/**
- * @program:app
- * @author:Wang.Fuming
- * @creat:2021-09-07-10:08
- **/
+
 public class CalculateUtils {
 
     static final DecimalFormat df2DecimalPlaces = new DecimalFormat("0.00");

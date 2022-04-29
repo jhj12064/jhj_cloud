@@ -1,34 +1,67 @@
 server:
-  port: 21102
+  port: 20000
   address: 0.0.0.0
-
-logging:
-  level:
-    root:  INFO
-    org.springframework:  WARN
-    com.jhj:  DEBUG
-    com.jhj.oss: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.hibernate.engine.QueryParameters: DEBUG
-    org.hibernate.engine.query.HQLQueryPlan: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
-  file:
-    path: /var/jhj-log/jhj-oss
-    name: /var/jhj-log/jhj-oss/${spring.application.name}.log
-  logback:
-    rollingpolicy:
-      max-history: 15
-      max-file-size: 50MB
-
+#logging:
+#  level:
+#    root:  INFO
+#    org.springframework:  INFO
+#    com.jhj.gateway:  INFO
+#    com.jhj:  INFO
+management:
+  endpoints:
+    gateway:
+      enabled: true
+    web:
+      exposure:
+        include: gateway
 spring:
-  messages:
-    encoding: UTF-8
   profiles:
     active:
-     - local
+      - local
   application:
-    name: jhj-oss-service
+    name: jhj-gateway-service
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    locale: zh_CN
+    time-zone: GMT+8
   cloud:
+    gateway:
+      httpclient:
+        ssl:
+          handshake-timeout-millis: 10000
+          close-notify-flush-timeout-millis: 3000
+          close-notify-read-timeout-millis: 0
+          useInsecureTrustManager: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowCredentials: true
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+        add-to-simple-url-handler-mapping: true
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: jhj-oss
+          uri: lb://jhj-oss-service
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 50
+#                redis-rate-limiter.burstCapacity: 100
+#                key-resolver: "#{@hostAddrKeyResolver}"
+          predicates:
+            - Path=/oss/**
+
+
+
+        - id: jhj-user
+          uri: lb://jhj-user-service
+          predicates:
+            - Path=/user/**
+
     consul:
       config:
         enabled: true #是否启用配置中心功能
@@ -49,60 +82,25 @@ spring:
         health-check-critical-timeout: 30s
         health-check-path: /actuator/health
         instance-id: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port} # 应用名称+服务器IP+端口+版本
-      enabled: true
+    enabled: true
   main:
     allow-bean-definition-overriding: true
-  datasource:
-    #初始化数据
-    #    data: classpath:data.sql
-    #    sql-script-encoding: utf-8
-    #    initialization-mode: ALWAYS
-    #druid
-    type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      ## 最小空闲连接数量
-      minimum-idle: 5
-      ## 空闲连接存活最大时间，默认600000（10分钟）
-      idle-timeout: 180000
-      ## 连接池最大连接数，默认是10
-      maximum-pool-size: 10
-      ## 此属性控制从池返回的连接的默认自动提交行为,默认值：true
-      auto-commit: true
-      ## 连接池母子
-      pool-name: MyHikariCP
-      ## 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
-      max-lifetime: 1800000
-      ## 数据库连接超时时间,默认30秒，即30000
-      connection-timeout: 30000
-  jpa:
-    format-sql: true
-    show-sql: true
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    hibernate:
-      types:
-        print:
-          banner: false
-      ddl-auto: update
-      naming:
-        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-    open-in-view: true
-    properties:
-      hibernate:
-        session_factory:
-          statement_inspector: com.jhj.oss.inspect.DeleteInspect
-feign:
-  httpclient:
-    enabled: false
-  okhttp:
-    enabled: true
-  client:
-    config:
-      rpc-user: # feign name
-        requestInterceptors:
-          - com.jhj.common.Intercptor.FeignInterceptor
-#spring.servlet:
-#  multipart:
-#    max-file-size: 1024MB
-#    max-request-size: 1024MB
+#feign:
+#  httpclient:
+#    enabled: false
+#  okhttp:
+#    enabled: true
+#  client:
+#    config:
+#      rpc-user: # feign name
+#        requestInterceptors:
+#          - com.jhj.common.Intercptor.FeignTokenInterceptor
+
+exclusion:
+  url:
+#    - /ems/v2/api-docs
+#    - /bi/v2/api-docs
+#    - /rmp/v2/api-docs
+#    - /ditui/v2/api-docs
+#    - /oms/v2/api-docs
+#    - /oss/v2/api-docs
