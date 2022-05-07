@@ -23,7 +23,7 @@
     <java.version>1.8</java.version>
     <project.version>1.0</project.version>
     <log4j.version>2.12.1</log4j.version>
-    <mysql-connecter.version>8.0.26</mysql-connecter.version>
+    <mysql-connecter.version>8.0.18</mysql-connecter.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
