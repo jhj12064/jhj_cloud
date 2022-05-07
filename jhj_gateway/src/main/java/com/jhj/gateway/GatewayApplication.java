@@ -1,7 +1,7 @@
 package com.jhj.gateway;
 
 
-import com.jhj.gateway.config.ExclusionUrl;
+//import com.jhj.gateway.config.ExclusionUrl;
 import com.jhj.gateway.config.WhiteList;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
