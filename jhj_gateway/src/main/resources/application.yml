@@ -26,6 +26,8 @@ spring:
     time-zone: GMT+8
   cloud:
     gateway:
+      # 是否开启网关
+      enabled: true
       httpclient:
         ssl:
           handshake-timeout-millis: 10000
@@ -53,8 +55,10 @@ spring:
 #                redis-rate-limiter.burstCapacity: 100
 #                key-resolver: "#{@hostAddrKeyResolver}"
           predicates:
-            - Path=/oss/**
-
+            - Path= /oss/**
+          filters:
+#            # 表示在将请求发送到下游之前从请求中剥离的路径个数，1表示从二级url路径转发
+            - StripPrefix= 1 # 去除请求路径的1级路径
 
 
         - id: jhj-user
