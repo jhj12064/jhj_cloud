@@ -8,13 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 
 @Slf4j
 @Api(tags = "test")
-@Controller
-@RequestMapping("/oss/v1")
+@RestController
+@RequestMapping("/oss_v1")
 public class OssController {
 
     @Autowired
@@ -25,6 +26,12 @@ public class OssController {
     @PostMapping("/test")
     public void download(HttpServletResponse response) {
         fileService.test(1, true, response);
+    }
+
+    @ApiOperation(value = "test")
+    @PostMapping("/test2")
+    public String test(HttpServletResponse response) {
+        return "test2";
     }
 
 
