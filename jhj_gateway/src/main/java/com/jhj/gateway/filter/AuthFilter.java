@@ -28,6 +28,9 @@
 //import java.io.Serializable;
 //import java.util.List;
 //
+///**
+// * 用户拦截器
+// */
 //@Component
 //@Slf4j
 //@RefreshScope

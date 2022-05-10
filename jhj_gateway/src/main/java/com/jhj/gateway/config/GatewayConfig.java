@@ -9,6 +9,10 @@ import reactor.core.publisher.Mono;
 @Configuration
 public class GatewayConfig {
 
+    /**
+     * 限流
+     * @return
+     */
     @Bean
     public KeyResolver hostAddrKeyResolver() {
         return exchange -> Mono.just(exchange.getRequest().getRemoteAddress().getAddress().getHostAddress());
