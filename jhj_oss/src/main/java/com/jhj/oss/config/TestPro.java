@@ -27,5 +27,7 @@ public class TestPro {
 
     private List<String> lists;
 
+    private Dog dog;
+
 
 }

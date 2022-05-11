@@ -21,3 +21,6 @@ testpro:
   lists:
     - String1
     - String2
+  dog:
+    name: 旺财
+    age: 2
