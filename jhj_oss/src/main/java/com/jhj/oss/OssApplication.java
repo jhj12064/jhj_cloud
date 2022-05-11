@@ -1,6 +1,7 @@
 package com.jhj.oss;
 
 import com.jhj.oss.config.ExclusionUrl;
+import com.jhj.oss.config.TestPro;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @EnableFeignClients
 @EnableJpaAuditing
 @EnableDiscoveryClient
-@EnableConfigurationProperties({ExclusionUrl.class})
+@EnableConfigurationProperties({ExclusionUrl.class, TestPro.class})
 public class OssApplication {
     public static void main(String[] args) {
         SpringApplication.run(OssApplication.class, args);

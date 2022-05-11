@@ -1,5 +1,7 @@
 package com.jhj.oss.controller;
 
+import com.jhj.oss.config.ExclusionUrl;
+import com.jhj.oss.config.TestPro;
 import com.jhj.oss.service.FileService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -21,6 +23,10 @@ public class OssController {
     @Autowired
     FileService fileService;
 
+    @Autowired
+    private TestPro testPro;
+
+
 
     @ApiOperation(value = "test")
     @PostMapping("/test")
@@ -31,6 +37,7 @@ public class OssController {
     @ApiOperation(value = "test")
     @PostMapping("/test2")
     public String test(HttpServletResponse response) {
+        System.out.println(testPro);
         return "test2";
     }
 

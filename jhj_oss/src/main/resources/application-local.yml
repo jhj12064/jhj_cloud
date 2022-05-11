@@ -12,3 +12,12 @@ spring:
 exclusion:
   url:
     - /**
+
+testpro:
+  id: 1
+  name: naemaa
+  flag: true
+  maps: {k1=k1, k2=k2}
+  lists:
+    - String1
+    - String2
