@@ -14,5 +14,10 @@ import lombok.ToString;
 public class Dog {
     private String name;
     private Integer age;
+    public static void main(String[] args) {
+        "".split(",,,,,");
+    }
 
 }
+
+
