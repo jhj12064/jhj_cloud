@@ -1,6 +1,6 @@
 package com.jhj.easyexcel;
 
-import com.jhj.easyexcel.model.DemoData;
+import com.jhj.easyexcel.model.read.DemoData;
 
 import java.util.List;
 

@@ -5,7 +5,7 @@ import com.alibaba.excel.read.listener.ReadListener;
 import com.alibaba.excel.util.ListUtils;
 import com.alibaba.fastjson.JSON;
 import com.jhj.easyexcel.DemoDAO;
-import com.jhj.easyexcel.model.DemoData;
+import com.jhj.easyexcel.model.read.DemoData;
 import lombok.extern.slf4j.Slf4j;
 
 

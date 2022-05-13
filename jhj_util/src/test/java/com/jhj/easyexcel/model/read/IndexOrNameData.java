@@ -1,4 +1,4 @@
-package com.jhj.easyexcel.model;
+package com.jhj.easyexcel.model.read;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.jhj.utils.DateUtil;
