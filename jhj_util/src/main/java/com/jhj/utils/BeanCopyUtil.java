@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 /**
- * 深度拷贝
+ * @author Jeremy
  */
 public class BeanCopyUtil  extends BeanUtils {
 

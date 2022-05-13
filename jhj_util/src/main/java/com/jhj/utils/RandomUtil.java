@@ -4,7 +4,9 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.Arrays;
 import java.util.Random;
-
+/**
+ * @author Jeremy
+ */
 public class RandomUtil {
 
     public static String getRandomCharUtil(int count){

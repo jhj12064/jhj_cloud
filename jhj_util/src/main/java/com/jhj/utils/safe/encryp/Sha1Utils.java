@@ -2,7 +2,9 @@ package com.jhj.utils.safe.encryp;
 
 import java.security.MessageDigest;
 import java.util.Formatter;
-
+/**
+ * @author Jeremy
+ */
 public class Sha1Utils {
 	public static String encode(String source) {
 		try {

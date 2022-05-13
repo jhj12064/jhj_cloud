@@ -1,5 +1,7 @@
 package com.jhj.utils;
-
+/**
+ * @author Jeremy
+ */
 @FunctionalInterface
 public interface BeanCopyUtilCallBack<S, T>  {
 

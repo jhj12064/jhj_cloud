@@ -19,9 +19,7 @@ import java.util.Map;
 
 
 /**
- * 获取地址类
- *
- * @author ruoyi
+ * @author Jeremy
  */
 @Slf4j
 public class AddressUtils {

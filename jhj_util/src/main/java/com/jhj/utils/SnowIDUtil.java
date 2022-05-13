@@ -5,7 +5,9 @@ import org.springframework.stereotype.Component;
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
-
+/**
+ * @author Jeremy
+ */
 @Component
 public class SnowIDUtil {
 

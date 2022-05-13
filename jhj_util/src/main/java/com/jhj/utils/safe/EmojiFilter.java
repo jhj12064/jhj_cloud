@@ -2,7 +2,9 @@ package com.jhj.utils.safe;
 
 
 import org.apache.commons.lang3.StringUtils;
-
+/**
+ * @author Jeremy
+ */
 public class EmojiFilter {
 
     /**

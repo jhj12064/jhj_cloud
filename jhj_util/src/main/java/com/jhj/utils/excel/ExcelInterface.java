@@ -2,7 +2,9 @@ package com.jhj.utils.excel;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-
+/**
+ * @author Jeremy
+ */
 public interface ExcelInterface {
 
     ExcelExportBean createWorkBook();

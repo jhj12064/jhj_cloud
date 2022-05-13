@@ -2,11 +2,11 @@
 //
 //import cn.hutool.core.lang.ClassScanner;
 //import cn.hutool.core.map.TableMap;
-//import com.jgj.model.annotation.BatchSynchTable;
-//import com.jgj.model.annotation.TransformRule;
-//import com.jgj.model.common.ColumnMap;
-//import com.jgj.model.common.Rule;
-//import com.jgj.model.common.TableMap;
+//import com.jhj.model.annotation.BatchSynchTable;
+//import com.jhj.model.annotation.TransformRule;
+//import com.jhj.model.common.ColumnMap;
+//import com.jhj.model.common.Rule;
+//import com.jhj.model.common.TableMap;
 //import lombok.extern.slf4j.Slf4j;
 //
 //import java.lang.reflect.Field;

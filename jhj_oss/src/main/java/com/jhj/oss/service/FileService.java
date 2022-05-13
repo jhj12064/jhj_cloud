@@ -1,7 +1,9 @@
 package com.jhj.oss.service;
 
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * @author Jeremy
+ */
 public interface FileService {
 
 

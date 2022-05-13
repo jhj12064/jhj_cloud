@@ -9,7 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Random;
-
+/**
+ * @author Jeremy
+ */
 @Slf4j
 public class RandomCodeUtil {
 

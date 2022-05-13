@@ -1,11 +1,11 @@
 package com.jhj.utils.safe;
   
 import java.nio.charset.Charset;
-import java.security.MessageDigest;  
-  
-/** 
- * 采用MD5加密解密 
- */  
+import java.security.MessageDigest;
+
+/**
+ * @author Jeremy
+ */
 public class MD5Util {  
   
     /*** 

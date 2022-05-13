@@ -5,7 +5,9 @@ import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+/**
+ * @author Jeremy
+ */
 @Getter
 @Setter
 @Entity

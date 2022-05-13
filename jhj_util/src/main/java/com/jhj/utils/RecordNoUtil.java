@@ -2,7 +2,9 @@ package com.jhj.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+/**
+ * @author Jeremy
+ */
 public class RecordNoUtil {
     private static final String timePormat = "yyyyMMddHHmmssSSS";
     private static final String timePormat2 = "mmssSSS";

@@ -12,7 +12,9 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
+/**
+ * @author Jeremy
+ */
 @Slf4j
 public class FileUtil {
     public MultipartFile getMultipartFile(InputStream inputStream, String fileName, String textFieldName) {

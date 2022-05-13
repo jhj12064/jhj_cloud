@@ -1,7 +1,9 @@
 package com.jhj.utils.safe.encryp;
 
 import java.util.Base64;
-
+/**
+ * @author Jeremy
+ */
 public class Base64Util {
 
 	@SuppressWarnings("restriction")
