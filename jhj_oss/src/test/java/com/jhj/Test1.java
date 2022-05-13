@@ -27,4 +27,11 @@ public class Test1 {
         System.out.println(testPro);
         fileService.test(1, true, null);
     }
+
+    @Test
+    public void test2(){
+        String a="";
+        new StringBuilder();
+        new StringBuffer();
+    }
 }
