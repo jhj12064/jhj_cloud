@@ -1,7 +1,10 @@
 package com.jhj.oss.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.jhj.common.model.Param;
 import com.jhj.oss.config.ExclusionUrl;
 import com.jhj.oss.config.TestPro;
+import com.jhj.oss.feign.UserFeign;
 import com.jhj.oss.service.FileService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,6 +29,9 @@ public class OssController {
     @Autowired
     private TestPro testPro;
 
+    @Autowired
+    UserFeign userFeign;
+
 
 
     @ApiOperation(value = "test")
@@ -40,6 +46,26 @@ public class OssController {
         System.out.println(testPro);
         return "test2";
     }
+
+
+    /**
+     * 测试配置类
+     * @param response
+     * @return
+     */
+    @ApiOperation(value = "test")
+    @PostMapping("/test3")
+    public String test3(HttpServletResponse response) {
+        Object a = userFeign.getDingtalkInfoByEmpIds(new Param(1, "a"));
+        log.info("getDingtalkInfoByEmpIds 结果:{}" + JSON.toJSONString(a));
+        System.out.println(testPro);
+        return "test2";
+    }
+
+
+
+
+
 
 
 }
