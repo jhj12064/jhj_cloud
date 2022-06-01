@@ -6,9 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.List;
-
-@FeignClient(value = "jhj-user-service")
+@FeignClient(value = "jhj-user-service", fallback = UserProviderBack.class)
 public interface UserFeign {
 
     @PostMapping("/user/v1/getUser")
