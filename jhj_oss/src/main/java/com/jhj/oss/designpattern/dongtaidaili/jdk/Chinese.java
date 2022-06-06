@@ -7,6 +7,6 @@ package com.jhj.oss.designpattern.dongtaidaili.jdk;
 public class Chinese implements People{
     @Override
     public void sayHello() {
-        System.out.println("Chinese say 你好.");
+        System.out.println("Chinese say 你好啊.");
     }
 }
