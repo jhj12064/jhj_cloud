@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @SpringBootTest(classes = OssApplication.class)
 @RunWith(SpringRunner.class)
-public class Test1 {
+public class CopyOnWriteArrayListTest {
     @Autowired
     FileService fileService;
 

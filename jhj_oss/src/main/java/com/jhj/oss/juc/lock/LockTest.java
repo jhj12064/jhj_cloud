@@ -1,4 +1,4 @@
-package com.jhj.oss.juc;
+package com.jhj.oss.juc.lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -38,8 +38,9 @@ class Ticket2{
 
       Lock l =  new ReentrantLock();
     public void sale(){
+        l.lock();
         try {
-            l.lock();
+
             l.tryLock();//尝试获取锁
             if(num>0){
                 System.out.println(Thread.currentThread().getName() + (num--)+ "剩余" + num);
