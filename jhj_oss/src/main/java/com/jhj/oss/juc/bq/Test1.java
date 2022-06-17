@@ -5,6 +5,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 队列
+ * 4组api
  * @author Jeremy
  * @date 2022/6/16 15:00
  */
