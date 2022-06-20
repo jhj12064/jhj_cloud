@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * CompletableFuture 核心4个方法
+ * CompletableFuture
  * 如何减少阻塞，轮询
  * @author Jeremy
  * @date 2022/6/20 16:34
