@@ -1,10 +1,10 @@
-package com.jhj.oss.juc.lock;
+package com.jhj.oss.juc.cas;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.atomic.AtomicStampedReference;
 
 /**
+ * 自定义
  * 自旋锁
  */
 public class SpinlockDemo {
@@ -15,7 +15,7 @@ public class SpinlockDemo {
         Thread thread = Thread.currentThread();
         System.out.println(Thread.currentThread().getName() + "----> mylock");
         while (!objectAtomicStampedReference.compareAndSet(null, thread)){
-
+            System.out.println();
         }
     }
     //解锁
