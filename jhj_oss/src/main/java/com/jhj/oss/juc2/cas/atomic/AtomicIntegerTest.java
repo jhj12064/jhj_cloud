@@ -1,6 +1,7 @@
 package com.jhj.oss.juc2.cas.atomic;
 
 /**
+ * 基本类型原子类
  * 常用api：
  * get() 获取当前值
  * getAndSet（new Value） 获取当前值，设置新的值

@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicStampedReference;
  * 只注重头和尾的一致，只要首尾一致就接受。但是有的需求，还看重过程，中间不能发生任何修改，这就引出了AtomicReference原子引用。
  * 解决：加版本号
  */
-class AtomicStampedReferenceTest {
+public class AtomicStampedReferenceTest {
 
 
     public static void main(String[] args) {
