@@ -25,11 +25,14 @@ public class Demo1 {
         //Executors 工具类 3大方法 阿里巴巴不推荐使用
         ExecutorService pool = null;//单个线程
         try {
-            pool = Executors.newSingleThreadExecutor();
+            //pool = Executors.newSingleThreadExecutor();
             pool = Executors.newFixedThreadPool(5);//创建一个固定线程池大小
-            pool= Executors.newCachedThreadPool();//可伸缩
+          //  pool= Executors.newCachedThreadPool();//可伸缩
             for (int i = 0; i < 10; i++) {
-                pool.execute(()->{
+                /*pool.execute(()->{
+                    System.out.println(Thread.currentThread().getName() + "ok");
+                });*/
+                pool.submit(()->{
                     System.out.println(Thread.currentThread().getName() + "ok");
                 });
             }

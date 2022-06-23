@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 /**
+ * 对象属性修改原子类
  * 原子更新对象中的int类型字段
 
  * @author Jeremy
