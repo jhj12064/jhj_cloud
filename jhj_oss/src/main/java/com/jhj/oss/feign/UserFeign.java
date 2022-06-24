@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface UserFeign {
 
     @PostMapping("/user/v1/getUser")
-    Object getDingtalkInfoByEmpIds(@RequestBody Param p);
+    Object getUser(@RequestBody Param p);
 
 
 }

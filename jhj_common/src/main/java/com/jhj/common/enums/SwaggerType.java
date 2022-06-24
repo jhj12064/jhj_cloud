@@ -8,7 +8,7 @@ package com.jhj.common.enums;
  */
 public enum SwaggerType {
 
-    OSS("oss","/oss/v2/api-docs", "2.0"),
+    OAA("oss","/oss/v2/api-docs", "2.0"),
 
     ;
 

@@ -17,7 +17,7 @@ import java.util.Map;
 @Slf4j
 public class JwtUtil {
 
-    private final static String SECRET = "52d907a4b404af790cf2cf488acc4836";
+    private final static String SECRET = "1wqeqweqeq";
     private final static String ISSUSER = "auth.jhj.com";
     private final static String SUBJECT = "this is  token";
     private static final String JWT_CLAIM = "empId";

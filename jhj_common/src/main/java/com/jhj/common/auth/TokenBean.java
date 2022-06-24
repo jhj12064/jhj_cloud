@@ -8,12 +8,12 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@ApiModel("登录凭证信息")
+@ApiModel("登录凭 证信息")
 @AllArgsConstructor
 @NoArgsConstructor
 public class TokenBean implements Serializable {
 
-    private static final long serialVersionUID = -2798821059736056219L;
+    private static final long serialVersionUID = -2792131319736056219L;
 
     @ApiModelProperty("accesstoken")
     private String accessToken;

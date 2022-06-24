@@ -2,7 +2,6 @@ package com.jhj.oss.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.jhj.common.model.Param;
-import com.jhj.oss.config.ExclusionUrl;
 import com.jhj.oss.config.TestPro;
 import com.jhj.oss.feign.UserFeign;
 import com.jhj.oss.service.FileService;
@@ -10,7 +9,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +27,7 @@ public class OssController {
     @Autowired
     private TestPro testPro;
 
+   // @Qualifier("")
     @Autowired
     UserFeign userFeign;
 
@@ -56,8 +55,8 @@ public class OssController {
     @ApiOperation(value = "test")
     @PostMapping("/test3")
     public String test3(HttpServletResponse response) {
-        Object a = userFeign.getDingtalkInfoByEmpIds(new Param(1, "a"));
-        log.info("getDingtalkInfoByEmpIds 结果:{}" + JSON.toJSONString(a));
+        Object a = userFeign.getUser(new Param(1, "a"));
+        log.info("getUser 结果:{}" + JSON.toJSONString(a));
         System.out.println(testPro);
         return "test2";
     }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserProviderBack implements UserFeign {
     @Override
-    public Object getDingtalkInfoByEmpIds(Param p) {
+    public Object getUser(Param p) {
         return "降级了！！！！！！！！！！！！！";
     }
 

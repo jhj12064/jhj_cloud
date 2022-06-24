@@ -116,9 +116,5 @@ spring:
 
 exclusion:
   url:
-#    - /ems/v2/api-docs
-#    - /bi/v2/api-docs
-#    - /rmp/v2/api-docs
-#    - /ditui/v2/api-docs
-#    - /oms/v2/api-docs
-#    - /oss/v2/api-docs
+
+#    - /qqqqss/v2/api-docs

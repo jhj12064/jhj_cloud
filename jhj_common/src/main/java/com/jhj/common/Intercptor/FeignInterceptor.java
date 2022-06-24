@@ -19,7 +19,6 @@ public class FeignInterceptor implements RequestInterceptor {
 
     private HttpServletRequest getServletRequest() {
         try {
-            // 这种方式获取的HttpServletRequest是线程安全的
             HttpServletRequest request = ((ServletRequestAttributes) (RequestContextHolder.currentRequestAttributes())).getRequest();
             if(null == request){
                 WebApplicationContext webApplicationContext = ContextLoader.getCurrentWebApplicationContext();

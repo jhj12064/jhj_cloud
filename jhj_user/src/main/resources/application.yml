@@ -31,13 +31,7 @@ spring:
         health-check-path: /actuator/health
         instance-id: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port} # 应用名称+服务器IP+端口+版本
       enabled: true
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/wq_ems?useUnicode=true&allowMultiQueries=true&useAffectedRows=true&characterEncoding=utf8&serverTimezone=UTC
-#    username: root
-#    password: 123456
-  #    url: jdbc:mysql://39.100.84.102:3306/wq_ems?useUnicode=true&allowMultiQueries=true&useAffectedRows=true&characterEncoding=utf8&serverTimezone=UTC
-  #    username: wq_ems
-  #    password: BKZNs8BXx7bCp8se
+
 
 
 
