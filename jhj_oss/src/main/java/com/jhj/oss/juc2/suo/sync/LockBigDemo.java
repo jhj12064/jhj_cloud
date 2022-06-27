@@ -6,7 +6,7 @@ package com.jhj.oss.juc2.suo.sync;
 public class LockBigDemo {
     static Object lock = new Object();
 
-   
+
 
     public static void main(String[] args) {
         LockBigDemo lockClearUpDemo = new LockBigDemo();

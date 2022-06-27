@@ -4,7 +4,7 @@ public class Ticket {
     private int num = 50;
     Object lock = new Object();
 
-    public void sale() {
+    public synchronized void sale() {
         if (num > 0) {
             System.out.println(Thread.currentThread().getName() + "卖出" + num-- + " 剩下：" + num);
         }
