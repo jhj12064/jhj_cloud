@@ -34,7 +34,7 @@ public class Demo2 {
                 5, //最大线程池大小
                 3, //超时不调用自动释放
                 TimeUnit.SECONDS,
-                new LinkedBlockingDeque<>(3),
+                new LinkedBlockingDeque<>(3), // LinkedBlockingDeque 无界队列 ArrayBlockingQuene 有界队列
                 Executors.defaultThreadFactory(),
                 //new ThreadPoolExecutor.AbortPolicy() //银行满了，还有人进来，抛出异常
 //                new ThreadPoolExecutor.CallerRunsPolicy() //哪来的回哪里 让main线程自己执行

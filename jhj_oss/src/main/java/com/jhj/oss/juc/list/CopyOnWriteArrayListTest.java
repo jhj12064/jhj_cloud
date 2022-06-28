@@ -22,6 +22,7 @@ public class CopyOnWriteArrayListTest {
                 list.add(UUID.randomUUID().toString().substring(0, 5));
                // list.add("asasas");
                 System.out.println(list);
+                list.get(0);
             },String.valueOf(i)).start();
         }
     }

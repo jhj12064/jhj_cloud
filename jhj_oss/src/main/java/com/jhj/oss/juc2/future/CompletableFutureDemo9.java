@@ -12,6 +12,9 @@ public class CompletableFutureDemo9 {
 
 
     public static void main(String[] args) throws Exception, InterruptedException {
+        Thread thread = new Thread();
+       // Thread.State;
+        thread.run();
         //ExecutorService executorService = Executors.newFixedThreadPool(5);
         CompletableFuture<Integer> integerCompletableFuture = CompletableFuture.supplyAsync(() -> {
             System.out.println(Thread.currentThread().getName() + "1 号任务 comr in ");
