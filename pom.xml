@@ -11,6 +11,7 @@
     <module>jhj_oss</module>
     <module>jhj_common</module>
     <module>jhj_gateway</module>
+      <module>jhj_waibu</module>
   </modules>
   <packaging>pom</packaging>
 

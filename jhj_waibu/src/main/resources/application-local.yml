@@ -1,0 +1,30 @@
+spring:
+  config:
+    import: optional:consul:localhost:8500
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+
+
+aliyun:
+  accessKey: xxx
+  accessSecret: xxx
+  oss:
+    endpoint: xxx
+    bucket-name: xxx
+  regionId: xxx
+  ocr:
+    appCode: xxx
+  dingTalk:
+    appKey: xxxx
+    appSecret: xxx
+    agentId: xxx
+    robot:
+      appKey: xxxx
+      appSecret: xxx
+      agentId: xxx
+wechat:
+  appid: xxx
+  secret: xxx

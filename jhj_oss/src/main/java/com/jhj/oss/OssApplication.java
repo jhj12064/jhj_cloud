@@ -9,6 +9,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.CrossOrigin;
 /**
  * @author Jeremy
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @EnableJpaAuditing
 @EnableDiscoveryClient
 @EnableConfigurationProperties({ExclusionUrl.class, TestPro.class})
+@EnableScheduling //开启定时任务
 public class OssApplication {
     public static void main(String[] args) {
         SpringApplication.run(OssApplication.class, args);

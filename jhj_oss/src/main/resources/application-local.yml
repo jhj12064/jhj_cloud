@@ -24,3 +24,9 @@ testpro:
   dog:
     name: 旺财
     age: 2
+thread:
+  pool:
+    corePoolSize: 2
+    maxPoolSize: 24
+    keepAliveSeconds: 30
+    queueCapacity: 200
