@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * 单聊消息
  *
- * @author wanqian
  */
 @Setter
 @Getter
