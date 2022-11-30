@@ -33,4 +33,8 @@ public class FileServiceImpl implements FileService {
         fileTest.setFileSize(0L);
         fileDao.save(fileTest);
     }
+
+    public static void main(String[] args) {
+        System.out.println("1213");
+    }
 }
