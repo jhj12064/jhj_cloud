@@ -20,4 +20,5 @@ public class JolDemo {
 class Customer{
     int id;
      boolean a =false;
+    Integer id2;
 }
